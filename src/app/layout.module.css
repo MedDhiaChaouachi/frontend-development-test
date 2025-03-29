@@ -1,0 +1,19 @@
+/* app/layout.module.css */
+.rootLayout {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  display: flex;
+  height: 100vh;
+}
+
+.mainContent {
+  flex: 1;
+  overflow: auto;
+  margin-left: 92px; /* Match sidebar width */
+}
+
+/* Fix for links - apply class to links in your JSX */
+.link {
+  text-decoration: none;
+  color: inherit;
+}
