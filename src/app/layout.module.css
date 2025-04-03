@@ -1,4 +1,4 @@
-/* app/layout.module.css */
+/* Base Layout */
 .rootLayout {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
@@ -10,10 +10,91 @@
   flex: 1;
   overflow: auto;
   margin-left: 92px; /* Match sidebar width */
+  padding: 12px 24px 12px 12px;
+  background-color: var(--neutral-purple-100);
 }
 
-/* Fix for links - apply class to links in your JSX */
+/* Body Container */
+.bodyContainer {
+  width: 100%;
+  max-width: 1348px;
+  height: 693px;
+  display: flex;
+  gap: 24px;
+  margin: 0 auto;
+}
+
+/* Content Section (Left) */
+.contentSection {
+  flex: 1;
+  height: 669px;
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  overflow-y: auto;
+}
+
+/* Preview Section (Right) */
+.previewSection {
+  width: 1312px;
+  height: 669px;
+  background: var(--neutral-purple-50);
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* iPhone Mockup */
+.iphoneMockup {
+  width: 375px;
+  height: 812px;
+
+  border-radius: 40px;
+  padding: 20px;
+}
+
+.iphoneImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 20px;
+}
+
+/* Link Styles */
 .link {
   text-decoration: none;
   color: inherit;
+}
+/* Add these new styles below your existing ones */
+
+/* Segment Container */
+.bodySegment {
+  width: 954px;
+  height: 681px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 24px 0;
+  background: #ffffff;
+  border-radius: 24px; /* XL radius */
+}
+
+/* Segment Header */
+.segmentHeader {
+  padding: 0 24px;
+  margin-bottom: 12px;
+}
+
+/* Segment Content */
+.segmentContent {
+  flex: 1;
+  padding: 0 24px;
+  overflow-y: auto;
+}
+
+/* Segment Footer */
+.segmentFooter {
+  padding: 0 24px;
+  margin-top: 12px;
 }
