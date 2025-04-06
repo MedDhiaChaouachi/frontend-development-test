@@ -1,6 +1,11 @@
+import React from "react";
 import styles from "./BodyContent.module.css";
 
-export const CampaignBody = () => {
+type CampaignBodyProps = {
+  children?: React.ReactNode;
+};
+
+export const CampaignBody = ({ children }: CampaignBodyProps) => {
   return (
     <main className={styles.mainContainer}>
       {/* Left Side - Editor with Segmented Sections */}
@@ -63,6 +68,9 @@ export const CampaignBody = () => {
           />
         </div>
       </div>
+
+      {/* Render children if passed */}
+      {children}
     </main>
   );
 };

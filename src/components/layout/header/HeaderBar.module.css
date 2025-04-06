@@ -1,0 +1,114 @@
+.headerWrapper {
+  width: 1348px;
+  height: 136px;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+/* Top Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 52px;
+  padding: 0 16px;
+  gap: 16px;
+}
+
+/* Left Frame */
+.leftGroup {
+  display: flex;
+  gap: 16px;
+}
+
+/* Center Frame */
+.centerGroup {
+  width: 703px;
+  height: 52px;
+  padding: 0 16px;
+  gap: 16px;
+  display: flex;
+  align-items: center;
+}
+
+/* Right Frame */
+.rightGroup {
+  width: 204px;
+  height: 52px;
+  gap: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* Menu Button */
+.menuButton {
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: transparent;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Profile Container */
+.profileContainer {
+  display: flex;
+  align-items: center;
+  width: 156px;
+  height: 52px;
+  padding: 6px;
+  gap: 8px;
+  border-radius: 999px;
+  background-color: #f5f5f5;
+}
+
+.profileImage {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Header Section */
+.headerSection {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  padding: 0 16px;
+}
+
+.leftAction {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.circleButton {
+  width: 48px;
+  height: 48px;
+  padding: 0 20px;
+  border-radius: 999px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pageTitle {
+  width: 1252px;
+  height: 28px;
+  font-size: 20px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  padding-left: 8px;
+}

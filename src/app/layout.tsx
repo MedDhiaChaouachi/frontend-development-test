@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Sidebar } from "@/components/layout/sidebar/Sidebar";
 import { CampaignBody } from "@/components/campaign-create/BodyContent";
+import { HeaderBar } from "@/components/layout/header/HeaderBar";
 import styles from "./layout.module.css";
 
 export const metadata: Metadata = {
@@ -15,10 +16,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={styles.rootLayout}>
-        <Sidebar />
-        <main className={styles.mainContent}>
-          <CampaignBody />
-        </main>
+        <div className={styles.sidebarContainer}>
+          <Sidebar />
+        </div>
+        <div className={styles.mainContentArea}>
+          <HeaderBar />
+          <div className={styles.contentWrapper}>
+            <CampaignBody>{children}</CampaignBody>
+          </div>
+        </div>
       </body>
     </html>
   );
