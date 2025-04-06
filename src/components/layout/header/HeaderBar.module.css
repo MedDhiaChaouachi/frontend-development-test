@@ -1,10 +1,22 @@
 .headerWrapper {
-  width: 1348px;
+  width: 100%;
   height: 136px;
   border-bottom: 1px solid #e0e0e0;
   display: flex;
   flex-direction: column;
+  background: white;
+  position: fixed;
+  top: 0;
+  left: 92px;
+  right: 0;
+  z-index: 90;
+}
+
+.container {
+  width: 100%;
+  max-width: 1348px;
   margin: 0 auto;
+  padding: 0 24px;
 }
 
 /* Top Navbar */
@@ -20,12 +32,117 @@
 /* Left Frame */
 .leftGroup {
   display: flex;
+  align-items: center;
   gap: 16px;
+}
+
+.creditsContainer {
+  width: 205px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--Background-Primary, #ffffff);
+  border-radius: 999px;
+  padding: 6px;
+  box-shadow: 0px 2px 1px 0px rgba(232, 245, 255, 0.25);
+}
+
+.creditsIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--Background-Inverse, #43444c);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  box-shadow: 0px 2px 1px 0px rgba(232, 245, 255, 0.25);
+  color: white;
+}
+
+.creditsText {
+  width: 97px;
+  height: 40px;
+  padding-right: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.creditsLabel {
+  font-family: "Parkinsans", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.75%;
+  color: var(--Content-Secondary, #575964);
+}
+
+.creditsValue {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.creditsAmount {
+  font-family: "Parkinsans", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0.75%;
+  color: var(--Content-Primary, #43444c);
+}
+
+.creditsType {
+  font-family: "Parkinsans", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.75%;
+  color: var(--Content-Secondary, #575964);
+}
+
+.addCreditsButton {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--Background-Brand, #7f51f2);
+  border: 1.5px solid var(--Border-Brand, #7f51f2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 8px;
+  color: white;
+}
+
+.addIconWrapper {
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.addIcon {
+  width: 16px;
+  height: 16px;
+  filter: brightness(0) invert(1);
+  object-fit: contain;
+}
+
+/* Revenue */
+.revenue {
+  font-family: "Parkinsans", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #000;
 }
 
 /* Center Frame */
 .centerGroup {
-  width: 703px;
+  flex: 1;
   height: 52px;
   padding: 0 16px;
   gap: 16px;
@@ -43,7 +160,6 @@
   justify-content: flex-end;
 }
 
-/* Menu Button */
 .menuButton {
   width: 36px;
   height: 36px;
@@ -53,7 +169,6 @@
   cursor: pointer;
 }
 
-/* Profile Container */
 .profileContainer {
   display: flex;
   align-items: center;
@@ -72,7 +187,6 @@
   object-fit: cover;
 }
 
-/* Header Section */
 .headerSection {
   display: flex;
   align-items: center;
@@ -93,7 +207,6 @@
 .circleButton {
   width: 48px;
   height: 48px;
-  padding: 0 20px;
   border-radius: 999px;
   border: 1px solid #ccc;
   background-color: #fff;
@@ -104,7 +217,7 @@
 }
 
 .pageTitle {
-  width: 1252px;
+  flex: 1;
   height: 28px;
   font-size: 20px;
   font-weight: 600;
