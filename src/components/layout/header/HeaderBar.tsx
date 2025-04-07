@@ -39,7 +39,37 @@ export const HeaderBar = () => {
                 </button>
               </div>
             </div>
-            <div className={styles.revenue}>Revenue: $1,200</div>
+            <div className={styles.revenueContainer}>
+              <div className={styles.revenueIcon}>
+                <Image
+                  src="/icons/money-icon.svg"
+                  alt="Money Icon"
+                  width={20}
+                  height={20}
+                />
+              </div>
+
+              <div className={styles.revenueText}>
+                <div className={styles.revenueLabelFrame}>
+                  <div className={styles.revenueLabel}>Revenue</div>
+                  <div className={styles.revenueBadgeSmall}>
+                    <div className={styles.revenueBadgeInner}>
+                      <Image
+                        src="/icons/revenue.svg"
+                        alt="Badge Icon"
+                        width={12}
+                        height={12}
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div className={styles.revenueAmountFrame}>
+                  <div className={styles.revenueAmount}>32.018.00</div>
+                  <div className={styles.revenueCurrency}>TND</div>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Frame 2 - Center */}

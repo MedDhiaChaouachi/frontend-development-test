@@ -225,3 +225,96 @@
   align-items: center;
   padding-left: 8px;
 }
+.revenueContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 192px;
+  height: 52px;
+  padding: 6px;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 999px;
+}
+
+.revenueIcon {
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  border-radius: 50%;
+  background: var(--Background-PositiveSubtle, #ecfaef);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.revenueText {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 40px;
+  gap: 4px;
+}
+
+.revenueLabelFrame {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  width: 100px;
+  height: 16px;
+}
+
+.revenueLabel {
+  font-family: "Parkinsans", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.75%;
+  width: 100px;
+  height: 16px;
+  color: var(--Content-Secondary, #575964);
+}
+
+.revenueBadgeSmall {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--Background-Positive, #41cb5d);
+  border: 1px solid var(--Background-Positive, #41cb5d);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.revenueBadgeInner {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.revenueAmountFrame {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.revenueAmount {
+  font-family: "Parkinsans", sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--Content-Primary, #43444c);
+  line-height: 24px;
+}
+
+.revenueCurrency {
+  font-family: "Parkinsans", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--Content-Secondary, #575964);
+  line-height: 20px;
+}
