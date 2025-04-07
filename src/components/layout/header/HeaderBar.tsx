@@ -48,7 +48,6 @@ export const HeaderBar = () => {
                   height={20}
                 />
               </div>
-
               <div className={styles.revenueText}>
                 <div className={styles.revenueLabelFrame}>
                   <div className={styles.revenueLabel}>Revenue</div>
@@ -63,7 +62,6 @@ export const HeaderBar = () => {
                     </div>
                   </div>
                 </div>
-
                 <div className={styles.revenueAmountFrame}>
                   <div className={styles.revenueAmount}>32.018.00</div>
                   <div className={styles.revenueCurrency}>TND</div>
@@ -77,14 +75,50 @@ export const HeaderBar = () => {
 
           {/* Frame 3 - Menu and Profile */}
           <div className={styles.rightGroup}>
-            <button className={styles.menuButton}>☰</button>
+            <div className={styles.notificationButton}>
+              <div className={styles.notificationIconWrapper}>
+                <Image
+                  src="/icons/notification-icon.svg"
+                  alt="Notifications"
+                  width={16}
+                  height={16}
+                  className={styles.notificationIcon}
+                />
+                <div className={styles.notificationBadge}>
+                  <Image
+                    src="/icons/label.svg"
+                    alt="Notification Count"
+                    width={6}
+                    height={16}
+                    className={styles.notificationLabel}
+                  />
+                </div>
+              </div>
+            </div>
             <div className={styles.profileContainer}>
-              <img
-                src="/profile.jpg"
-                alt="Profile"
-                className={styles.profileImage}
-              />
-              <span>John Doe</span>
+              <div className={styles.avatar}>
+                <Image
+                  src="/icons/25.svg"
+                  alt="Profile"
+                  width={40}
+                  height={40}
+                  className={styles.avatarImg}
+                />
+              </div>
+
+              <div className={styles.profileText}>
+                <div className={styles.greeting}>Hello 👋</div>
+                <div className={styles.profileName}>Hayfa</div>
+              </div>
+              <button className={styles.profileDropdownButton}>
+                <Image
+                  src="/icons/ic-outline-arrow-down.svg"
+                  alt="Dropdown"
+                  width={12}
+                  height={12}
+                  className={styles.dropdownIcon}
+                />
+              </button>
             </div>
           </div>
         </div>

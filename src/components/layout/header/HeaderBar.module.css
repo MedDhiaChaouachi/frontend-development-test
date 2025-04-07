@@ -318,3 +318,134 @@
   color: var(--Content-Secondary, #575964);
   line-height: 20px;
 }
+
+/* Notification Button */
+.notificationButton {
+  width: 52px;
+  height: 52px;
+  padding: 0 16px;
+  border-radius: 999px;
+  background: var(--Background-Tertiary, #e1e2e8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border: none;
+  cursor: pointer;
+}
+
+.notificationIconWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+}
+
+.notificationIcon {
+  width: 16px;
+  height: 16px;
+}
+
+.notificationBadge {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  left: 24px;
+  top: -16px;
+  background: var(--Background-Secondary-01, #ff7f3c);
+  border-radius: 50%;
+  border: 1px solid var(--Background-Secondary-01, #ff7f3c);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notificationLabel {
+  width: 6px;
+  height: 16px;
+  object-fit: contain;
+}
+
+/* Profile Container */
+.profileContainer {
+  width: 156px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 999px;
+  padding: 6px;
+  background: var(--Background-Primary, #ffffff);
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--Colors-Neutral-Neutral-Purple-neutralpurple-50, #f5f6f8);
+  box-shadow: 0px 0px 0px 2px #d7c9fb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatarImg {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #ffffff;
+  object-fit: cover;
+}
+
+.profileText {
+  width: 56px;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.greeting {
+  width: 56px;
+  height: 16px;
+  font-family: "Parkinsans", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--Content-Secondary, #575964);
+  margin-bottom: 4px;
+}
+
+.profileName {
+  width: 56px;
+  height: 24px;
+  font-family: "Parkinsans", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0.75%;
+  color: var(--Content-Primary, #43444c);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.profileDropdownButton {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--Border-Default, #e0e0e0);
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.dropdownIcon {
+  width: 12px;
+  height: 12px;
+}
