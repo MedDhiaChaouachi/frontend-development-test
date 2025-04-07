@@ -505,3 +505,61 @@
   color: var(--Content-Secondary, #575964);
   line-height: 20px;
 }
+/* Header Section */
+.headerSection {
+  width: 1348px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 24px 12px 12px;
+}
+/* Left Action Button */
+.leftAction {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circleButton {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid var(--Border-Default, #e0e0e0);
+  background: var(--Content-PrimaryInverse, #ffffff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  cursor: pointer;
+}
+
+.buttonIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+}
+.pageTitle {
+  width: 1252px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.titleText {
+  width: 220px;
+  height: 28px;
+  font-family: "Parkinsans", sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: 0.75%;
+  color: var(--Content-Primary, #43444c);
+  display: flex;
+  align-items: center;
+}

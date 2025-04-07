@@ -242,21 +242,19 @@ export const HeaderBar = () => {
         <div className={styles.headerSection}>
           <div className={styles.leftAction}>
             <button className={styles.circleButton}>
-              <svg
-                width="20"
-                height="20"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                viewBox="0 0 24 24"
-              >
-                <path d="M15 18l-6-6 6-6" />
-              </svg>
+              <div className={styles.buttonIcon}>
+                <Image
+                  src="/icons/ic-outline-arrow-left.svg" // Changed to arrow icon
+                  alt="Back"
+                  width={16}
+                  height={16}
+                />
+              </div>
             </button>
           </div>
-          <div className={styles.pageTitle}>Dashboard Overview</div>
+          <div className={styles.pageTitle}>
+            <span className={styles.titleText}>Create campaign</span>
+          </div>
         </div>
       </div>
     </header>
