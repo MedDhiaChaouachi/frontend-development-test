@@ -1,5 +1,5 @@
 .headerWrapper {
-  width: 100%;
+  width: calc(100% - 92px);
   height: 136px;
   border-bottom: 1px solid #e0e0e0;
   display: flex;
@@ -8,8 +8,8 @@
   position: fixed;
   top: 0;
   left: 92px;
-  right: 0;
   z-index: 90;
+  padding-top: 16px;
 }
 
 .container {
@@ -19,7 +19,6 @@
   padding: 0 24px;
 }
 
-/* Top Navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -29,7 +28,6 @@
   gap: 16px;
 }
 
-/* Left Frame */
 .leftGroup {
   display: flex;
   align-items: center;
@@ -132,15 +130,6 @@
   object-fit: contain;
 }
 
-/* Revenue */
-.revenue {
-  font-family: "Parkinsans", sans-serif;
-  font-weight: 500;
-  font-size: 14px;
-  color: #000;
-}
-
-/* Center Frame */
 .centerGroup {
   flex: 1;
   height: 52px;
@@ -150,7 +139,6 @@
   align-items: center;
 }
 
-/* Right Frame */
 .rightGroup {
   width: 204px;
   height: 52px;
@@ -160,16 +148,56 @@
   justify-content: flex-end;
 }
 
-.menuButton {
-  width: 36px;
-  height: 36px;
+.notificationButton {
+  width: 52px;
+  height: 52px;
+  padding: 0 16px;
+  border-radius: 999px;
+  background: var(--Background-Tertiary, #e1e2e8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
   border: none;
-  background: transparent;
-  font-size: 20px;
   cursor: pointer;
 }
 
+.notificationIconWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+}
+
+.notificationIcon {
+  width: 16px;
+  height: 16px;
+}
+
+.notificationBadge {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  left: 24px;
+  top: -16px;
+  background: var(--Background-Secondary-01, #ff7f3c);
+  border-radius: 50%;
+  border: 1px solid var(--Background-Secondary-01, #ff7f3c);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.notificationLabel {
+  width: 6px;
+  height: 16px;
+  object-fit: contain;
+}
+
 .profileContainer {
+  position: relative;
   display: flex;
   align-items: center;
   width: 156px;
@@ -177,21 +205,179 @@
   padding: 6px;
   gap: 8px;
   border-radius: 999px;
-  background-color: #f5f5f5;
+  background: var(--Background-Primary, #ffffff);
+  cursor: pointer;
 }
 
-.profileImage {
-  width: 36px;
-  height: 36px;
+.avatar {
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
+  background: var(--Colors-Neutral-Neutral-Purple-neutralpurple-50, #f5f6f8);
+  box-shadow: 0px 0px 0px 2px #d7c9fb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatarImg {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #ffffff;
   object-fit: cover;
+}
+
+.profileText {
+  width: 56px;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.greeting {
+  width: 56px;
+  height: 16px;
+  font-family: "Parkinsans", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--Content-Secondary, #575964);
+  margin-bottom: 4px;
+}
+
+.profileName {
+  width: 56px;
+  height: 24px;
+  font-family: "Parkinsans", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0.75%;
+  color: var(--Content-Primary, #43444c);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.profileDropdownButton {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--Border-Default, #e0e0e0);
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.profileDropdownMenu {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 4px);
+  width: 240px;
+  background: var(--Background-Primary, #ffffff);
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 8px 0;
+  z-index: 100;
+  border: 1px solid var(--Border-Default, #e0e0e0);
+}
+
+.dropdownItem {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  gap: 12px;
+  cursor: pointer;
+  background: var(--Background-Primary, #ffffff);
+  border-radius: 999px;
+  margin: 4px 8px;
+}
+
+.dropdownItem:hover {
+  background: var(--Background-Tertiary, #e1e2e8);
+}
+
+.itemIcon {
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.itemLabel {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.75%;
+  color: var(--Content-Primary, #43444c);
+  flex: 1;
+}
+
+.languageButtons {
+  display: flex;
+  gap: 4px;
+  position: static; /* Remove absolute positioning */
+  transform: none; /* Remove transform */
+  width: auto; /* Let it size naturally */
+  height: auto; /* Let it size naturally */
+  margin-left: auto; /* Push to the right */
+}
+
+.languageButton {
+  width: 39px;
+  height: 32px;
+  padding: 8px 12px;
+  font-family: "Parkinsans", sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.75%;
+  background: var(--Content-PrimaryInverse, #ffffff);
+  border: 1px solid var(--Background-Tertiary, #e1e2e8);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0; /* Prevent buttons from shrinking */
+}
+
+.languageButton:first-child {
+  border-top-left-radius: 999px;
+  border-bottom-left-radius: 999px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.languageButton:last-child {
+  border-top-right-radius: 999px;
+  border-bottom-right-radius: 999px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.languageButtonActive {
+  background: var(--Background-BrandPressed, #5a3aac);
+  border: 1px solid var(--Background-BrandPressed, #5a3aac);
+  color: var(--Content-PrimaryInverse, #ffffff);
+}
+
+.profileDropdownButton[data-open="true"] .dropdownIcon {
+  transform: rotate(180deg);
+  transition: transform 0.2s ease;
 }
 
 .headerSection {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-top: 16px;
+  margin-top: 24px;
   padding: 0 16px;
 }
 
@@ -225,6 +411,7 @@
   align-items: center;
   padding-left: 8px;
 }
+
 .revenueContainer {
   display: flex;
   align-items: center;
@@ -317,135 +504,4 @@
   font-weight: 500;
   color: var(--Content-Secondary, #575964);
   line-height: 20px;
-}
-
-/* Notification Button */
-.notificationButton {
-  width: 52px;
-  height: 52px;
-  padding: 0 16px;
-  border-radius: 999px;
-  background: var(--Background-Tertiary, #e1e2e8);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  border: none;
-  cursor: pointer;
-}
-
-.notificationIconWrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 16px;
-  height: 16px;
-}
-
-.notificationIcon {
-  width: 16px;
-  height: 16px;
-}
-
-.notificationBadge {
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  left: 24px;
-  top: -16px;
-  background: var(--Background-Secondary-01, #ff7f3c);
-  border-radius: 50%;
-  border: 1px solid var(--Background-Secondary-01, #ff7f3c);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.notificationLabel {
-  width: 6px;
-  height: 16px;
-  object-fit: contain;
-}
-
-/* Profile Container */
-.profileContainer {
-  width: 156px;
-  height: 52px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  border-radius: 999px;
-  padding: 6px;
-  background: var(--Background-Primary, #ffffff);
-}
-
-.avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: var(--Colors-Neutral-Neutral-Purple-neutralpurple-50, #f5f6f8);
-  box-shadow: 0px 0px 0px 2px #d7c9fb;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.avatarImg {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: #ffffff;
-  object-fit: cover;
-}
-
-.profileText {
-  width: 56px;
-  height: 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.greeting {
-  width: 56px;
-  height: 16px;
-  font-family: "Parkinsans", sans-serif;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 16px;
-  color: var(--Content-Secondary, #575964);
-  margin-bottom: 4px;
-}
-
-.profileName {
-  width: 56px;
-  height: 24px;
-  font-family: "Parkinsans", sans-serif;
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 24px;
-  letter-spacing: 0.75%;
-  color: var(--Content-Primary, #43444c);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.profileDropdownButton {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  border: 1px solid var(--Border-Default, #e0e0e0);
-  background: transparent;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 8px;
-  cursor: pointer;
-}
-
-.dropdownIcon {
-  width: 12px;
-  height: 12px;
 }

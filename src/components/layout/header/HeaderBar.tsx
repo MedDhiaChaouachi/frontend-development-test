@@ -1,7 +1,33 @@
+"use client";
+
+import { useState, useRef, useEffect } from "react";
 import styles from "./HeaderBar.module.css";
 import Image from "next/image";
 
 export const HeaderBar = () => {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [selectedLanguage, setSelectedLanguage] = useState("En");
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  const toggleDropdown = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(e.target as Node)
+      ) {
+        setIsDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
   return (
     <header className={styles.headerWrapper}>
       <div className={styles.container}>
@@ -74,7 +100,7 @@ export const HeaderBar = () => {
           <div className={styles.centerGroup}></div>
 
           {/* Frame 3 - Menu and Profile */}
-          <div className={styles.rightGroup}>
+          <div className={styles.rightGroup} ref={dropdownRef}>
             <div className={styles.notificationButton}>
               <div className={styles.notificationIconWrapper}>
                 <Image
@@ -95,7 +121,7 @@ export const HeaderBar = () => {
                 </div>
               </div>
             </div>
-            <div className={styles.profileContainer}>
+            <div className={styles.profileContainer} onClick={toggleDropdown}>
               <div className={styles.avatar}>
                 <Image
                   src="/icons/25.svg"
@@ -110,7 +136,11 @@ export const HeaderBar = () => {
                 <div className={styles.greeting}>Hello 👋</div>
                 <div className={styles.profileName}>Hayfa</div>
               </div>
-              <button className={styles.profileDropdownButton}>
+              <button
+                className={styles.profileDropdownButton}
+                data-open={isDropdownOpen}
+                onClick={toggleDropdown}
+              >
                 <Image
                   src="/icons/ic-outline-arrow-down.svg"
                   alt="Dropdown"
@@ -119,6 +149,91 @@ export const HeaderBar = () => {
                   className={styles.dropdownIcon}
                 />
               </button>
+
+              {/* Dropdown Menu */}
+              {isDropdownOpen && (
+                <div className={styles.profileDropdownMenu}>
+                  {/* Language Selection */}
+                  <div
+                    className={`${styles.dropdownItem} ${styles.languageItem}`}
+                  >
+                    <div
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "12px",
+                      }}
+                    >
+                      <div className={styles.itemIcon}>
+                        <Image
+                          src="/icons/ic-outline-earth.svg"
+                          alt="Language"
+                          width={16}
+                          height={16}
+                        />
+                      </div>
+                      <div className={styles.itemLabel}>Langue</div>
+                    </div>
+                    <div className={styles.languageButtons}>
+                      {["En", "Fr", "AR"].map((lang) => (
+                        <button
+                          key={lang}
+                          className={`${styles.languageButton} ${
+                            selectedLanguage === lang
+                              ? styles.languageButtonActive
+                              : ""
+                          }`}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            setSelectedLanguage(lang);
+                          }}
+                        >
+                          {lang}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Settings */}
+                  <div className={styles.dropdownItem}>
+                    <div className={styles.itemIcon}>
+                      <Image
+                        src="/icons/ic-outline-setting-2 (1).svg"
+                        alt="Settings"
+                        width={16}
+                        height={16}
+                      />
+                    </div>
+                    <div className={styles.itemLabel}>Settings</div>
+                  </div>
+
+                  {/* Change Account */}
+                  <div className={styles.dropdownItem}>
+                    <div className={styles.itemIcon}>
+                      <Image
+                        src="/icons/ic-outline-square-swap-horizontal.svg"
+                        alt="Change Account"
+                        width={16}
+                        height={16}
+                      />
+                    </div>
+                    <div className={styles.itemLabel}>Changer de compte</div>
+                  </div>
+
+                  {/* Logout */}
+                  <div className={styles.dropdownItem}>
+                    <div className={styles.itemIcon}>
+                      <Image
+                        src="/icons/ic-outline-logout.svg"
+                        alt="Logout"
+                        width={16}
+                        height={16}
+                      />
+                    </div>
+                    <div className={styles.itemLabel}>Se déconnecter</div>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
