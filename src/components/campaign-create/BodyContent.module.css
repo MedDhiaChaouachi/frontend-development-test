@@ -154,8 +154,6 @@
   color: #43444c;
 }
 
-/* ... (all other styles remain exactly the same) ... */
-
 /* Input Fields Container */
 .inputFieldsContainer {
   width: 906px;
@@ -175,7 +173,7 @@
 }
 
 .inputBox {
-  width: 100%; /* This is the key change */
+  width: 100%;
   height: 40px;
   display: flex;
   justify-content: space-between;
@@ -213,20 +211,6 @@
   text-align: right;
 }
 
-/* Input Box */
-.inputBox {
-  width: 441px;
-  height: 40px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #ffffff;
-  border-radius: 20px;
-  border: 1px solid #d3d4dd;
-  box-shadow: 0px 2px 1px 0px rgba(232, 245, 255, 0.25);
-  padding: 0 12px;
-}
-
 .inputContent {
   font-family: "Parkinsans", sans-serif;
   font-weight: 400;
@@ -246,6 +230,176 @@
 .arrowIcon {
   width: 16px;
   height: 16px;
+}
+
+/* Campaign Content Section */
+.campaignContentSection {
+  width: 906px;
+  margin: 0 auto;
+  padding: 12px 0;
+}
+
+.campaignContentHeader {
+  width: 100%;
+  height: 24px;
+  margin-bottom: 12px;
+}
+
+.campaignContentTitle {
+  font-family: "Parkinsans", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0.75%;
+  color: #43444c;
+}
+
+/* Textarea Container */
+.inputContainerTextarea {
+  width: 906px;
+  height: 122px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  border: 1px solid #d3d4dd;
+  border-top: 1px solid var(--Border-Brand, #7f51f2);
+  background: var(--Background-Primary, #ffffff);
+  box-shadow: 0px 2px 1px 0px #e8f5ff40;
+  overflow: hidden;
+  position: relative;
+}
+
+.textareaTopSection {
+  width: 100%;
+  height: 78px;
+  padding: 12px;
+  position: relative;
+}
+
+.campaignTextarea {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  resize: none;
+  font-family: "Parkinsans", sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  padding-right: 60px; /* Space for counter */
+}
+
+.characterCounter {
+  position: absolute;
+  right: 24px;
+  top: 24px;
+  width: 44px;
+  height: 16px;
+  font-family: "Parkinsans", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.75%;
+  color: #9193a5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+
+.textareaBottomSection {
+  width: 100%;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+  border-top: 1px solid #e1e2e8;
+  background: #ffffff;
+}
+
+.actionButtons {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* (Previous styles remain exactly the same until the .buttonCircleIconSmall rule) */
+
+.buttonCircleIconSmall {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  border-radius: 50%;
+  border: 1px solid #e1e2e8;
+  padding: 8px;
+  background: transparent;
+  cursor: pointer;
+}
+
+/* Add this new rule for the bold button */
+.boldButton {
+  background: var(--Background-Secondary-01, #ff7f3c);
+  border: none;
+}
+
+.actionIcon {
+  width: 12.75px;
+  height: 12.75px;
+  color: var(--Content-TertiaryInverse, #bfc0cd);
+}
+
+.smallIconButton {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: white; /* Changed to white */
+  border: 1px #e1e2e8; /* Added border */
+  cursor: pointer;
+  padding: 0;
+  margin-left: auto;
+  margin-right: 12px;
+  position: relative;
+}
+
+.vectorIcon {
+  width: 6.37px;
+  height: 11.66px;
+  position: absolute;
+  top: 4.17px;
+  left: 6.87px;
+  transform: rotate(135deg);
+  filter: brightness(0) saturate(100%) invert(67%) sepia(9%) saturate(321%)
+    hue-rotate(202deg) brightness(89%) contrast(85%); /* SVG color to match your design */
+}
+
+/* If you need exact color control, better to use SVG with fill color defined */
+.smallIcon {
+  width: 12.75px;
+  height: 12.75px;
+}
+
+.campaignHintContainer {
+  width: 100%;
+  height: 20px;
+  margin-top: 8px;
+}
+
+.campaignHelperText {
+  width: 100%;
+  height: 20px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.75%;
+  color: var(--Content-Tertiary, #9193a5);
 }
 
 /* Preview Section */
