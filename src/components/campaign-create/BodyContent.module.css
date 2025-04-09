@@ -324,8 +324,6 @@
   gap: 6px;
 }
 
-/* (Previous styles remain exactly the same until the .buttonCircleIconSmall rule) */
-
 .buttonCircleIconSmall {
   width: 32px;
   height: 32px;
@@ -422,4 +420,113 @@
   width: 100%;
   height: 100%;
   object-fit: contain;
+}
+
+/*the Toggles : 
+/* Tracking Section */
+/* Tracking Section */
+.trackingSection {
+  width: 906px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 12px 0;
+}
+/* Tracking Header */
+.trackingHeader {
+  width: 906px;
+  display: flex;
+  justify-content: space-between; /* Pushes button to end */
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.trackingTitle {
+  font-family: "Parkinsans", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0.0075em;
+  color: var(--Content-Primary, #43444c);
+}
+
+.trackingHeaderButton {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 1px #e1e2e8; /* Width/S border */
+  padding: 8px;
+  background: transparent;
+  cursor: pointer;
+  flex-shrink: 0;
+  margin-left: 4px; /* gap: 4px */
+}
+
+.trackingHeaderIcon {
+  width: 12px;
+  height: 12px;
+}
+
+/* Toggle Components */
+.toggleContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.toggleTextContainer {
+  width: 850px;
+}
+
+.toggleMainText {
+  font-family: "Parkinsans", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.0075em;
+  color: var(--Content-Primary, #43444c);
+}
+
+.toggleDescription {
+  font-family: "Parkinsans", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.0075em;
+  color: var(--Content-Secondary, #575964);
+  margin-top: 4px;
+}
+
+/* Toggle Switch */
+.toggleSwitch {
+  width: 48px;
+  height: 24px;
+  border-radius: 1000px;
+  background: #e1e2e8;
+  position: relative;
+  cursor: pointer;
+}
+
+.toggleSwitch.toggleOn {
+  background: var(--Background-Brand, #7f51f2);
+}
+
+.toggleKnob {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--Background-Primary, #ffffff);
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  transition: left 0.2s;
+}
+
+.toggleSwitch.toggleOn .toggleKnob {
+  left: 28px;
 }

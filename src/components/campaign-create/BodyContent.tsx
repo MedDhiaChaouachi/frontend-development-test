@@ -9,12 +9,21 @@ type CampaignBodyProps = {
 
 export const CampaignBody = ({ children }: CampaignBodyProps) => {
   const [message, setMessage] = useState("");
+  const [shortenLinks, setShortenLinks] = useState(false);
+  const [includeTracking, setIncludeTracking] = useState(true);
+  const [customizeTracking, setCustomizeTracking] = useState(false);
+
   const messageCount = message.length;
   const messageParts = Math.ceil(messageCount / 160);
 
   const handleMessageChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setMessage(e.target.value);
   };
+
+  const toggleShortenLinks = () => setShortenLinks(!shortenLinks);
+  const toggleIncludeTracking = () => setIncludeTracking(!includeTracking);
+  const toggleCustomizeTracking = () =>
+    setCustomizeTracking(!customizeTracking);
 
   return (
     <main className={styles.mainContainer}>
@@ -174,6 +183,83 @@ export const CampaignBody = ({ children }: CampaignBodyProps) => {
                 {messageCount} Character{messageCount !== 1 ? "s" : ""} in{" "}
                 {messageParts} message{messageParts !== 1 ? "s" : ""} (160
                 characters per message)
+              </div>
+            </div>
+          </div>
+
+          {/* Tracking Section */}
+          {/* Tracking Section */}
+          <div className={styles.trackingSection}>
+            {/* Tracking Header */}
+            <div className={styles.trackingHeader}>
+              <div className={styles.trackingTitle}>Tracking</div>
+              <button className={styles.trackingHeaderButton}>
+                <img
+                  src="/icons/ic-outline-minus-cirlce.svg"
+                  alt="Info"
+                  className={styles.trackingHeaderIcon}
+                />
+              </button>
+            </div>
+            {/* Shorten Links Toggle */}
+            <div className={styles.toggleContainer}>
+              <div className={styles.toggleTextContainer}>
+                <div className={styles.toggleMainText}>
+                  Shorten all links with bzbp.tn
+                </div>
+              </div>
+              <div
+                className={`${styles.toggleSwitch} ${
+                  shortenLinks ? styles.toggleOn : ""
+                }`}
+                onClick={toggleShortenLinks}
+              >
+                <div className={styles.toggleKnob}></div>
+              </div>
+            </div>
+
+            {/* Include Tracking Toggle */}
+            <div className={styles.toggleContainer}>
+              <div className={styles.toggleTextContainer}>
+                <div className={styles.toggleMainText}>
+                  Include tracking parameters
+                </div>
+                <div className={styles.toggleDescription}>
+                  Links in this campaign will include addictional tracking
+                  information, called UTM parameters. <br />
+                  This allows source tracking within third-party reporting tools
+                  such as Google Analytics.
+                </div>
+              </div>
+              <div
+                className={`${styles.toggleSwitch} ${
+                  includeTracking ? styles.toggleOn : ""
+                }`}
+                onClick={toggleIncludeTracking}
+              >
+                <div className={styles.toggleKnob}></div>
+              </div>
+            </div>
+
+            {/* Customize Tracking Toggle */}
+            <div className={styles.toggleContainer}>
+              <div className={styles.toggleTextContainer}>
+                <div className={styles.toggleMainText}>
+                  Customize tracking parameters
+                </div>
+                <div className={styles.toggleDescription}>
+                  When enabled, this campaign will use the custom tracking
+                  parameters defined below and will completely replace the
+                  default parameters in your <u>Account Settings</u>.
+                </div>
+              </div>
+              <div
+                className={`${styles.toggleSwitch} ${
+                  customizeTracking ? styles.toggleOn : ""
+                }`}
+                onClick={toggleCustomizeTracking}
+              >
+                <div className={styles.toggleKnob}></div>
               </div>
             </div>
           </div>
