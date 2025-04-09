@@ -530,3 +530,99 @@
 .toggleSwitch.toggleOn .toggleKnob {
   left: 28px;
 }
+
+/* Action Filter Container */
+.actionFilter {
+  width: 906px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+/* Test Message Button */
+.testMessageButton {
+  width: 184px;
+  height: 40px;
+  display: flex;
+  padding: 0 16px;
+  border-radius: 999px;
+  border: 1px solid var(--Border-Secondary, #d1d2d8);
+  background: var(--Background-Tertiary, #e1e2e8);
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* Spacer - creates the large gap */
+.spacer {
+  flex-grow: 1;
+}
+
+/* Schedule Button */
+.scheduleButton {
+  width: 119px;
+  height: 40px;
+  padding: 0 16px;
+  border-radius: 999px;
+  border: 1.5px solid var(--Border-Brand, #7f51f2);
+  background: var(--Background-Primary, #ffffff);
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.scheduleContainer {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Send Button */
+.sendButton {
+  width: 89px;
+  height: 40px;
+  display: flex;
+  gap: 4px;
+  padding: 0 16px;
+  border-radius: 999px;
+  background: var(--Background-Brand, #7f51f2);
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+}
+
+/* Labels */
+.testMessageLabel {
+  font-family: "Parkinsans", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.75%;
+  color: var(--Content-Primary, #43444c);
+}
+
+.scheduleLabel {
+  font-family: "Parkinsans", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.75%;
+  color: var(--Content-Brand, #7f51f2);
+}
+
+.sendLabel {
+  font-family: "Parkinsans", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.75%;
+  color: var(--Content-PrimaryInverse, #ffffff);
+}
+
+/* Icon Right */
+.iconRight {
+  width: 16px;
+  height: 16px;
+}

@@ -188,7 +188,6 @@ export const CampaignBody = ({ children }: CampaignBodyProps) => {
           </div>
 
           {/* Tracking Section */}
-          {/* Tracking Section */}
           <div className={styles.trackingSection}>
             {/* Tracking Header */}
             <div className={styles.trackingHeader}>
@@ -249,7 +248,7 @@ export const CampaignBody = ({ children }: CampaignBodyProps) => {
                 </div>
                 <div className={styles.toggleDescription}>
                   When enabled, this campaign will use the custom tracking
-                  parameters defined below and will completely replace the
+                  parameters defined below and will completely replace the
                   default parameters in your <u>Account Settings</u>.
                 </div>
               </div>
@@ -261,6 +260,34 @@ export const CampaignBody = ({ children }: CampaignBodyProps) => {
               >
                 <div className={styles.toggleKnob}></div>
               </div>
+            </div>
+
+            {/* Action Filter - Now properly nested inside trackingSection */}
+            <div className={styles.actionFilter}>
+              <button className={styles.testMessageButton}>
+                <div className={styles.testMessageLabel}>
+                  Send a test message
+                </div>
+              </button>
+              <div className={styles.spacer}></div>
+              <button className={styles.scheduleButton}>
+                <div className={styles.scheduleContainer}>
+                  <div className={styles.scheduleLabel}>Schedule</div>
+                  <img
+                    src="/icons/ic-outline-calendar-add.svg"
+                    alt="Schedule"
+                    className={styles.iconRight}
+                  />
+                </div>
+              </button>
+              <button className={styles.sendButton}>
+                <div className={styles.sendLabel}>Send</div>
+                <img
+                  src="/icons/ic-outline-send-2.svg"
+                  alt="Send"
+                  className={styles.iconRight}
+                />
+              </button>
             </div>
           </div>
         </div>
