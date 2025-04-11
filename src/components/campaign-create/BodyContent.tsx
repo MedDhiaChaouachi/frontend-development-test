@@ -12,6 +12,12 @@ export const CampaignBody = ({ children }: CampaignBodyProps) => {
   const [shortenLinks, setShortenLinks] = useState(false);
   const [includeTracking, setIncludeTracking] = useState(true);
   const [customizeTracking, setCustomizeTracking] = useState(false);
+  const [showDatePicker, setShowDatePicker] = useState(false);
+  const [showTimePicker, setShowTimePicker] = useState(false);
+  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+  const [selectedTime, setSelectedTime] = useState<string>("08:00");
+  const [currentMonth, setCurrentMonth] = useState(new Date().getMonth());
+  const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
 
   const messageCount = message.length;
   const messageParts = Math.ceil(messageCount / 160);
@@ -24,6 +30,85 @@ export const CampaignBody = ({ children }: CampaignBodyProps) => {
   const toggleIncludeTracking = () => setIncludeTracking(!includeTracking);
   const toggleCustomizeTracking = () =>
     setCustomizeTracking(!customizeTracking);
+  const toggleDatePicker = () => setShowDatePicker(!showDatePicker);
+  const toggleTimePicker = () => setShowTimePicker(!showTimePicker);
+
+  const handleDateSelect = (date: Date) => {
+    setSelectedDate(date);
+  };
+
+  const handleTimeSelect = (time: string) => {
+    setSelectedTime(time);
+  };
+
+  const navigateMonth = (direction: number) => {
+    if (direction === -1 && currentMonth === 0) {
+      setCurrentMonth(11);
+      setCurrentYear(currentYear - 1);
+    } else if (direction === 1 && currentMonth === 11) {
+      setCurrentMonth(0);
+      setCurrentYear(currentYear + 1);
+    } else {
+      setCurrentMonth(currentMonth + direction);
+    }
+  };
+
+  const generateDays = () => {
+    const firstDay = new Date(currentYear, currentMonth, 1).getDay();
+    const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+    const days = [];
+
+    // Add empty cells for days before the first day of the month
+    for (let i = 0; i < firstDay; i++) {
+      days.push(
+        <div key={`empty-${i}`} className={styles.calendarDayEmpty}></div>
+      );
+    }
+
+    // Add cells for each day of the month
+    for (let i = 1; i <= daysInMonth; i++) {
+      const isSelected =
+        selectedDate &&
+        selectedDate.getDate() === i &&
+        selectedDate.getMonth() === currentMonth &&
+        selectedDate.getFullYear() === currentYear;
+
+      days.push(
+        <div
+          key={`day-${i}`}
+          className={`${styles.calendarDay} ${
+            isSelected ? styles.calendarDaySelected : ""
+          }`}
+          onClick={() =>
+            handleDateSelect(new Date(currentYear, currentMonth, i))
+          }
+        >
+          {i}
+        </div>
+      );
+    }
+
+    return days;
+  };
+
+  const formatDate = (date: Date | null) => {
+    if (!date) return "DD/MM/YYYY";
+    const day = date.getDate().toString().padStart(2, "0");
+    const month = (date.getMonth() + 1).toString().padStart(2, "0");
+    const year = date.getFullYear();
+    return `${day}/${month}/${year}`;
+  };
+
+  const handleApply = () => {
+    // Handle the apply action here
+    setShowDatePicker(false);
+    setShowTimePicker(false);
+  };
+
+  const handleCancel = () => {
+    setShowDatePicker(false);
+    setShowTimePicker(false);
+  };
 
   return (
     <main className={styles.mainContainer}>
@@ -262,7 +347,7 @@ export const CampaignBody = ({ children }: CampaignBodyProps) => {
               </div>
             </div>
 
-            {/* Action Filter - Now properly nested inside trackingSection */}
+            {/* Action Filter */}
             <div className={styles.actionFilter}>
               <button className={styles.testMessageButton}>
                 <div className={styles.testMessageLabel}>
@@ -270,16 +355,151 @@ export const CampaignBody = ({ children }: CampaignBodyProps) => {
                 </div>
               </button>
               <div className={styles.spacer}></div>
-              <button className={styles.scheduleButton}>
-                <div className={styles.scheduleContainer}>
-                  <div className={styles.scheduleLabel}>Schedule</div>
-                  <img
-                    src="/icons/ic-outline-calendar-add.svg"
-                    alt="Schedule"
-                    className={styles.iconRight}
-                  />
-                </div>
-              </button>
+              <div className={styles.scheduleButtonContainer}>
+                <button
+                  className={styles.scheduleButton}
+                  onClick={toggleDatePicker}
+                >
+                  <div className={styles.scheduleContainer}>
+                    <div className={styles.scheduleLabel}>Schedule</div>
+                    <img
+                      src="/icons/ic-outline-calendar-add.svg"
+                      alt="Schedule"
+                      className={styles.iconRight}
+                    />
+                  </div>
+                </button>
+
+                {showDatePicker && (
+                  <div className={styles.datePickerContainer}>
+                    <div className={styles.datePickerHeader}>
+                      <button
+                        className={styles.navButton}
+                        onClick={() => navigateMonth(-1)}
+                      >
+                        &lt;
+                      </button>
+                      <div className={styles.monthYearDisplay}>
+                        {new Date(currentYear, currentMonth).toLocaleString(
+                          "default",
+                          { month: "long" }
+                        )}{" "}
+                        {currentYear}
+                      </div>
+                      <button
+                        className={styles.navButton}
+                        onClick={() => navigateMonth(1)}
+                      >
+                        &gt;
+                      </button>
+                    </div>
+
+                    <div className={styles.dateInputContainer}>
+                      <div className={styles.dateInput}>
+                        {formatDate(selectedDate)}
+                      </div>
+                      <img
+                        src="/icons/ic-outline-calendar-add.svg"
+                        alt="Calendar"
+                        className={styles.calendarIcon}
+                      />
+                    </div>
+
+                    <div className={styles.calendarGrid}>
+                      {["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"].map((day) => (
+                        <div key={day} className={styles.calendarDayHeader}>
+                          {day}
+                        </div>
+                      ))}
+                      {generateDays()}
+                    </div>
+
+                    <div className={styles.timePickerSection}>
+                      <button
+                        className={styles.timePickerToggle}
+                        onClick={toggleTimePicker}
+                      >
+                        Select Time {showTimePicker ? "▲" : "▼"}
+                      </button>
+
+                      {showTimePicker && (
+                        <div className={styles.timePickerContainer}>
+                          <div className={styles.timePickerWheel}>
+                            <div className={styles.timeColumn}>
+                              {Array.from({ length: 24 }, (_, i) => i).map(
+                                (hour) => (
+                                  <div
+                                    key={`hour-${hour}`}
+                                    className={`${styles.timeItem} ${
+                                      selectedTime.startsWith(
+                                        `${hour.toString().padStart(2, "0")}:`
+                                      )
+                                        ? styles.timeItemSelected
+                                        : ""
+                                    }`}
+                                    onClick={() =>
+                                      handleTimeSelect(
+                                        `${hour.toString().padStart(2, "0")}:00`
+                                      )
+                                    }
+                                  >
+                                    {hour.toString().padStart(2, "0")}
+                                  </div>
+                                )
+                              )}
+                            </div>
+                            <div className={styles.timeColumn}>
+                              <div
+                                className={`${styles.timeItem} ${
+                                  selectedTime.endsWith(":00")
+                                    ? styles.timeItemSelected
+                                    : ""
+                                }`}
+                                onClick={() =>
+                                  handleTimeSelect(
+                                    selectedTime.split(":")[0] + ":00"
+                                  )
+                                }
+                              >
+                                00
+                              </div>
+                              <div
+                                className={`${styles.timeItem} ${
+                                  selectedTime.endsWith(":30")
+                                    ? styles.timeItemSelected
+                                    : ""
+                                }`}
+                                onClick={() =>
+                                  handleTimeSelect(
+                                    selectedTime.split(":")[0] + ":30"
+                                  )
+                                }
+                              >
+                                30
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+
+                    <div className={styles.datePickerActions}>
+                      <button
+                        className={styles.cancelButton}
+                        onClick={handleCancel}
+                      >
+                        Cancel
+                      </button>
+                      <button
+                        className={styles.applyButton}
+                        onClick={handleApply}
+                      >
+                        Apply
+                      </button>
+                    </div>
+                  </div>
+                )}
+              </div>
               <button className={styles.sendButton}>
                 <div className={styles.sendLabel}>Send</div>
                 <img

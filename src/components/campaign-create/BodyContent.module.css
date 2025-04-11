@@ -626,3 +626,299 @@
   width: 16px;
   height: 16px;
 }
+
+/* Date Picker Container */
+.datePickerContainer {
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  width: 280px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  padding: 16px;
+  z-index: 100;
+  margin-bottom: 8px;
+  border: 1px solid var(--Border-Default, #d0d3da);
+}
+
+/* Time Picker Section */
+.timePickerSection {
+  margin-top: 16px;
+}
+
+.timePickerToggle {
+  width: 100%;
+  padding: 8px 12px;
+  background: var(--Background-Tertiary, #e1e2e8);
+  border: none;
+  border-radius: 6px;
+  font-family: Parkinsans;
+  font-size: 14px;
+  color: var(--Content-Primary, #43444c);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.timePickerToggle:hover {
+  background: var(--Background-Secondary, #e8e9ed);
+}
+
+.timePickerContainer {
+  margin-top: 8px;
+  background: white;
+  border-radius: 8px;
+  padding: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.timePickerWheel {
+  display: flex;
+  height: 200px;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+}
+
+.timeColumn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  scroll-snap-align: start;
+}
+
+.timeColumn:first-child {
+  border-right: 1px solid var(--Border-Default, #d0d3da);
+}
+
+.timeItem {
+  padding: 8px 12px;
+  margin: 2px 0;
+  width: 100%;
+  text-align: center;
+  font-family: Parkinsans;
+  font-size: 14px;
+  color: var(--Content-Primary, #43444c);
+  cursor: pointer;
+  border-radius: 4px;
+  scroll-snap-align: start;
+}
+
+.timeItem:hover {
+  background: var(--Background-Tertiary, #e1e2e8);
+}
+
+.timeItemSelected {
+  background: var(--Background-Brand, #7f51f2);
+  color: white;
+}
+
+/* Calendar Grid Enhancements */
+.calendarGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  margin-bottom: 16px;
+  background: white;
+}
+
+.calendarDayHeader {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Parkinsans;
+  font-weight: 500;
+  font-size: 12px;
+  color: var(--Content-Secondary, #727582);
+}
+
+.calendarDay {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Parkinsans;
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--Content-Primary, #43444c);
+  cursor: pointer;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.calendarDay:hover {
+  background: var(--Background-Tertiary, #e1e2e8);
+}
+
+.calendarDaySelected {
+  background: var(--Background-Brand, #7f51f2);
+  color: white;
+}
+
+/* Date Input Styling */
+.dateInputContainer {
+  position: relative;
+  width: 100%;
+  height: 40px;
+  margin: 0 auto 16px;
+  background: white;
+}
+
+.dateInput {
+  width: 100%;
+  height: 100%;
+  border: 1px solid var(--Border-Default, #d0d3da);
+  border-radius: 8px;
+  padding: 8px 40px 8px 12px;
+  font-family: Parkinsans;
+  font-size: 14px;
+  color: var(--Content-Primary, #43444c);
+}
+
+.calendarIcon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  pointer-events: none;
+}
+.datePickerContainer {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  width: 300px;
+  z-index: 1000;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Header with month navigation */
+.datePickerHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  font-family: "Parkinsans", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #43444c;
+}
+
+.headerIcon {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+/* Date input and calendar container */
+.dateInputField {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  height: 40px;
+  width: 130px;
+  border: 1px solid #ccc;
+  padding: 0 8px;
+  border-radius: 6px;
+}
+
+.dateInputField input {
+  border: none;
+  outline: none;
+  font-size: 14px;
+  width: 100%;
+}
+
+.calendarIcon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Calendar days layout */
+.calendarGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+  text-align: center;
+  font-family: "Parkinsans", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #43444c;
+  margin-bottom: 16px;
+}
+
+.calendarDay {
+  width: 21px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Time selector */
+.timeSelector {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  max-height: 120px;
+  overflow-y: auto;
+  margin-bottom: 16px;
+}
+
+.timeOption {
+  background-color: #f4f4f4;
+  border-radius: 4px;
+  padding: 4px;
+  text-align: center;
+  cursor: pointer;
+  font-family: "Parkinsans", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.timeOption:hover {
+  background-color: #e0e0e0;
+}
+
+/* Footer buttons */
+.datePickerActions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+
+.cancelButton {
+  width: 124px;
+  height: 32px;
+  background-color: #e1e2e8;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.applyButton {
+  width: 124px;
+  height: 32px;
+  background-color: #7f51f2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
