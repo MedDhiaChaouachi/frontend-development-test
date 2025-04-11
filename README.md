@@ -1,36 +1,108 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📦 Buzzbip Frontend Development Test
 
-## Getting Started
+## 📌 Objective
 
-First, run the development server:
+This project was developed as part of a **Frontend Development Test** using **Next.js**. The goal is to translate a Figma design into a functional, responsive, and accessible frontend interface.
+
+The test evaluates:
+
+- UI translation accuracy from Figma.
+- Responsive behavior across devices.
+- Clean, modular, and scalable code structure.
+- Implementation of interactive and accessibility-friendly behaviors.
+
+---
+
+## 🧩 Provided Resources
+
+- 🔗 **Figma Design**:  
+  [Buzzbip Design in Figma](https://www.figma.com/design/FXHmDJZgJjtfhkbR3zmfzU/buzzbip-for-test?node-id=202-38356&m=dev&t=xYzjIHJwZHYg5IIr-1)
+
+- 📄 **Design System Document**:
+  - Typography guidelines
+  - Color palette
+  - Spacing system
+  - Button and component styles
+
+---
+
+## 🚀 Getting Started
+
+### 📁 Clone the repository
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/your-username/buzzbip-frontend-test.git
+cd buzzbip-frontend-test
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+📦 Install dependencies
+npm install
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+# or
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+yarn install
 
-## Learn More
+🧪 Run the development server
 
-To learn more about Next.js, take a look at the following resources:
+npm run dev
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# or
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+yarn dev
+Navigate to http://localhost:3000/campaign-create to see the app.
 
-## Deploy on Vercel
+🧱 Key Decisions
+-Next.js was used for file-based routing and fast dev setup.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+-CSS Modules were chosen for scoped and maintainable styling.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+-Component-based structure was implemented for reusability and scalability.
+
+-Responsive design is handled using flexbox, media queries, and rem-based spacing.
+
+📱 Responsiveness
+The design is fully responsive across:
+
+✅ Desktop
+
+✅ Tablet
+
+✅ Mobile
+
+Implemented using CSS media queries and adaptive layout techniques.
+
+✨ Interactive Behaviors
+All components include interactive states:
+
+Hover effects on clickable elements.
+
+Active/Selected styles for buttons and toggles.
+
+Focus and keyboard navigability for accessibility.
+
+📝 Assumptions & Notes
+Some icons and behaviors are based on best assumptions if not explicitly defined in the design.
+
+Date and time pickers were custom-built based on the design with responsiveness and accessibility in mind.
+
+The sidebar layout was adjusted for consistent vertical spacing and logo alignment.
+
+✅ Deliverables
+✅ Next.js application following the Figma design
+
+✅ Responsive layout (desktop, tablet, mobile)
+
+✅ Interactive states implemented
+
+✅ Modular, maintainable codebase
+
+✅ Git repository with structured commit history
+
+✅ This README with setup and explanation
+
+🧪 Tech Stack
+Next.js – React framework
+
+CSS Modules – Component-scoped styling
+
+TypeScript – Type safety and better DX
