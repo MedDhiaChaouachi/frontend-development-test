@@ -83,42 +83,44 @@ export const Sidebar = () => {
 
   return (
     <aside className={styles.sidebar}>
-      {/* Company Logo */}
+      {/* Company Logo - Centered at top */}
       <div className={styles.logoContainer}>
         <img
           src="/logo.svg"
           alt="Company Logo"
           className={styles.logo}
-          width={24}
-          height={24}
+          width={40}
+          height={40}
           loading="lazy"
         />
       </div>
 
-      {/* Main Navigation */}
-      <nav className={styles.mainNav}>
-        {mainNavItems.map((item) => (
-          <NavButton
-            key={item.href}
-            {...item}
-            isActive={pathname === item.href}
-          />
-        ))}
-      </nav>
+      {/* Main Navigation - Vertically centered */}
+      <div className={styles.navContainer}>
+        <nav className={styles.mainNav}>
+          {mainNavItems.map((item) => (
+            <NavButton
+              key={item.href}
+              {...item}
+              isActive={pathname === item.href}
+            />
+          ))}
+        </nav>
 
-      {/* Divider */}
-      <div className={styles.divider}></div>
+        {/* Divider */}
+        <div className={styles.divider}></div>
 
-      {/* Secondary Navigation */}
-      <nav className={styles.secondaryNav}>
-        {secondaryNavItems.map((item) => (
-          <NavButton
-            key={item.href}
-            {...item}
-            isActive={pathname === item.href}
-          />
-        ))}
-      </nav>
+        {/* Secondary Navigation */}
+        <nav className={styles.secondaryNav}>
+          {secondaryNavItems.map((item) => (
+            <NavButton
+              key={item.href}
+              {...item}
+              isActive={pathname === item.href}
+            />
+          ))}
+        </nav>
+      </div>
     </aside>
   );
 };

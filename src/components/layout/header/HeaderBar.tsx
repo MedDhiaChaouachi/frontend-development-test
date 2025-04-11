@@ -244,7 +244,7 @@ export const HeaderBar = () => {
             <button className={styles.circleButton}>
               <div className={styles.buttonIcon}>
                 <Image
-                  src="/icons/ic-outline-arrow-left.svg" // Changed to arrow icon
+                  src="/icons/ic-outline-arrow-left.svg"
                   alt="Back"
                   width={16}
                   height={16}

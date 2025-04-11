@@ -1,10 +1,10 @@
 .headerWrapper {
   width: calc(100% - 92px);
   height: 136px;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid var(--Border-Default, #d0d3da);
   display: flex;
   flex-direction: column;
-  background: white;
+  background: var(--neutral-purple-50, #f5f6f8);
   position: fixed;
   top: 0;
   left: 92px;
@@ -265,7 +265,7 @@
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  border: 1px solid var(--Border-Default, #e0e0e0);
+  border: 1px solid var(--Border-Default, #d0d3da);
   background: transparent;
   display: flex;
   align-items: center;
@@ -284,7 +284,7 @@
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
   padding: 8px 0;
   z-index: 100;
-  border: 1px solid var(--Border-Default, #e0e0e0);
+  border: 1px solid var(--Border-Default, #d0d3da);
 }
 
 .dropdownItem {
@@ -323,11 +323,11 @@
 .languageButtons {
   display: flex;
   gap: 4px;
-  position: static; /* Remove absolute positioning */
-  transform: none; /* Remove transform */
-  width: auto; /* Let it size naturally */
-  height: auto; /* Let it size naturally */
-  margin-left: auto; /* Push to the right */
+  position: static;
+  transform: none;
+  width: auto;
+  height: auto;
+  margin-left: auto;
 }
 
 .languageButton {
@@ -345,7 +345,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0; /* Prevent buttons from shrinking */
+  flex-shrink: 0;
 }
 
 .languageButton:first-child {
@@ -389,19 +389,31 @@
   justify-content: center;
   gap: 6px;
 }
-
 .circleButton {
   width: 48px;
   height: 48px;
-  border-radius: 999px;
-  border: 1px solid #ccc;
-  background-color: #fff;
-  cursor: pointer;
+  border-radius: 50%;
+  background: var(--neutral-purple-50, #f5f6f8);
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.2s ease;
 }
 
+.circleButton:hover {
+  background: var(--neutral-purple-100, #f5f6f8);
+}
+
+.buttonIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+}
 .pageTitle {
   flex: 1;
   height: 28px;
@@ -505,6 +517,7 @@
   color: var(--Content-Secondary, #575964);
   line-height: 20px;
 }
+
 /* Header Section */
 .headerSection {
   width: 1348px;
@@ -514,6 +527,7 @@
   gap: 6px;
   padding: 12px 24px 12px 12px;
 }
+
 /* Left Action Button */
 .leftAction {
   width: 48px;
@@ -527,7 +541,7 @@
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  border: 1px solid var(--Border-Default, #e0e0e0);
+  border: 1px solid var(--Border-Default, #d0d3da);
   background: var(--Content-PrimaryInverse, #ffffff);
   display: flex;
   align-items: center;
@@ -543,6 +557,7 @@
   width: 16px;
   height: 16px;
 }
+
 .pageTitle {
   width: 1252px;
   height: 28px;

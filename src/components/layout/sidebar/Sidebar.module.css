@@ -1,53 +1,96 @@
-/* components/layout/sidebar/Sidebar.module.css */
 .sidebar {
-  background-color: #f5f5f7;
-  border-right: 1px solid #e5e7eb;
-  width: 92px; /* Sidebar width */
-  height: 100vh; /* Ensure the sidebar spans the full viewport height */
-  padding-top: 24px; /* Top padding */
-  padding-right: 12px; /* Right padding */
-  padding-bottom: 24px; /* Bottom padding */
-  padding-left: 24px; /* Left padding */
-  position: fixed;
-  top: 0; /* Align to the top */
-  left: 0; /* Align to the left */
   display: flex;
   flex-direction: column;
-  gap: 24px; /* Space between elements */
+  align-items: center;
+  width: 80px;
+  height: 100vh;
+  background: var(--Background-Primary, #f8f8fa);
+  border-right: 1px solid var(--Border-Default, #d0d3da);
+  padding: 24px 0;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
 }
 
 .logoContainer {
-  background-color: white;
-  border-radius: 12px;
+  margin-bottom: 32px;
   display: flex;
-  align-items: center;
   justify-content: center;
-  width: 48px;
-  height: 48px;
-  margin: 0 auto 32px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  align-items: center;
+  width: 40px;
+  height: 40px;
 }
 
 .logo {
-  width: 24px;
-  height: 24px;
+  object-fit: contain;
+}
+
+.navContainer {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
+  width: 100%;
+}
+
+.mainNav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: auto;
+}
+
+.secondaryNav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-top: auto;
 }
 
 .navButtonContainer {
   position: relative;
-  margin-bottom: 4px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .navButton {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   width: 48px;
   height: 48px;
-  border-radius: 12px;
-  transition: background-color 0.2s ease;
-  color: #f6f7f8;
+  border-radius: 8px;
+  transition: all 0.2s ease;
   position: relative;
+}
+
+.navButton:hover {
+  background: var(--Background-Secondary, #e8e9ed);
+}
+
+.navButton.active {
+  background: var(--Background-Brand, #7f51f2);
+}
+
+.navButton.active .icon {
+  filter: brightness(0) invert(1);
+}
+
+.navButton.special {
+  background: var(--Background-Brand, #7f51f2);
+}
+
+.navButton.special .icon {
+  filter: brightness(0) invert(1);
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
 }
 
 .badge {
@@ -58,45 +101,9 @@
   height: 16px;
 }
 
-.navButton:hover {
-  background-color: #f3f5f8;
-}
-
-.special {
-  background-color: #7f51f2;
-  color: white;
-}
-
-.special:hover {
-  background-color: #6d40e0;
-}
-
-.active {
-  background-color: white;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-  color: #7f51f2;
-}
-
-.icon {
-  width: 24px;
-  height: 24px;
-}
-
-.mainNav {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  flex-grow: 1;
-}
-
-.secondaryNav {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  margin-bottom: 48px;
-}
-
 .divider {
-  border-top: 1px solid #e5e7eb;
-  margin: 8px 0;
+  width: 48px;
+  height: 1px;
+  background: var(--Border-Default, #d0d3da);
+  margin: 24px auto;
 }

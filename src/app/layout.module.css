@@ -4,28 +4,29 @@
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   display: flex;
   min-height: 100vh;
-  background-color: var(--neutral-purple-100);
+  background-color: var(--neutral-purple-50, #f5f6f8);
 }
 
 /* Sidebar */
 .sidebarContainer {
-  width: 92px; /* Ensure the sidebar width is fixed */
-  height: 100vh; /* Fill the height of the viewport */
+  width: 80px; /* Match sidebar width */
+  height: 100vh;
   position: fixed;
   left: 0;
   top: 0;
   z-index: 100;
-  border-right: 1px solid #e0e0e0;
-  padding: 24px 12px;
+  border-right: 1px solid var(--Border-Default, #d0d3da);
+  background: var(--neutral-purple-50, #f5f6f8);
 }
 
 /* Main Content Area */
 .mainContentArea {
   flex: 1;
-  margin-left: 92px; /* Allow space for the sidebar */
+  margin-left: 80px; /* Match sidebar width */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background: var(--neutral-purple-50, #f5f6f8);
 }
 
 /* Content Wrapper */
@@ -33,16 +34,18 @@
   flex: 1;
   padding: 24px;
   margin-top: 136px; /* Space for the header */
+  background: var(--neutral-purple-50, #f5f6f8);
 }
 
 /* Body Container */
 .bodyContainer {
   width: 100%;
   max-width: 1348px;
-  height: calc(100vh - 136px - 48px); /* Adjusted for header and padding */
+  height: calc(100vh - 136px - 48px);
   display: flex;
   gap: 24px;
   margin: 0 auto;
+  background: var(--neutral-purple-50, #f5f6f8);
 }
 
 /* Content Section */
@@ -59,7 +62,7 @@
 .previewSection {
   width: 1312px;
   height: 669px;
-  background: var(--neutral-purple-50);
+  background: var(--neutral-purple-50, #f5f6f8);
   border-radius: 12px;
   display: flex;
   justify-content: center;
@@ -74,7 +77,7 @@
   flex-direction: column;
   gap: 12px;
   padding: 24px 0;
-  background: #ffffff;
+  background: white;
   border-radius: 24px;
 }
 
@@ -84,6 +87,7 @@
   height: 812px;
   border-radius: 40px;
   padding: 20px;
+  background: white;
 }
 
 .iphoneImage {
@@ -91,29 +95,4 @@
   height: 100%;
   object-fit: contain;
   border-radius: 20px;
-}
-
-/* Link Styles */
-.link {
-  text-decoration: none;
-  color: inherit;
-}
-
-/* Segment Header */
-.segmentHeader {
-  padding: 0 24px;
-  margin-bottom: 12px;
-}
-
-/* Segment Content */
-.segmentContent {
-  flex: 1;
-  padding: 0 24px;
-  overflow-y: auto;
-}
-
-/* Segment Footer */
-.segmentFooter {
-  padding: 0 24px;
-  margin-top: 12px;
 }
